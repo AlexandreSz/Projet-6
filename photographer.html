@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
+    <meta charset="utf-8">
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+    <link href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Fisheye - photographe </title>
+</head>
+
+<body>
+    <header>
+        <img src="assets/images/logo.png" class="logo" />
+    </header>
+    <main id="main">
+        <div class="photograph-header">
+            <button class="contact_button" onclick="displayModal()">Contactez-moi</button>
+        </div>
+
+        <div class="photograph-tri">
+            <label for="trier">Trier par</label>
+            <select name="Trier" id="trier">
+                <option value="1" id="Popularité">Popularité</option>
+                <option value="2" id="date">Date</option>
+                <option value="3" id="titre">Titre</option>
+            </select>
+        </div>
+        <div class="gallerry">
+
+        </div>
+        <div id="contact_modal">
+            <div class="modal">
+                <header>
+                    <img src="assets/icons/close.svg" onclick="closeModal()" />
+                </header>
+                <form id="form">
+                    <div class="formData">
+                        <label>Prénom</label><br>
+                        <input class="text-control success" type="text" id="first" name="first" /><br>
+                    </div>
+                    <div class="formData">
+                        <label>Nom</label><br>
+                        <input class="text-control success" type="text" id="lat" name="last" /><br>
+                    </div>
+                    <div class="formData">
+                        <label>Email</label><br>
+                        <input class="text-control success" type="text" id="mail" name="mail" /><br>
+                    </div>
+                    <div class="formData">
+                        <label>Votre message</label><br>
+                        <textarea class="text-control success" id="message" rows="10" name="message"></textarea><br>
+                    </div>
+                    <button class="contact_button">Envoyer</button>
+                </form>
+            </div>
+        </div>
+        <div class="ligthbox-modal" id="light-modal">
+            <span class="close">&times;</span>
+            <div class="content-modal">
+                <img src="" alt="" type="video/mp4" controls>
+            </div>
+        </div>
+
+    </main>
+
+
+    <script src="scripts/factories/media.js"></script>
+    <script src="scripts/factories/profil.js"></script>
+    <script src="scripts/utils/contactForm.js"></script>
+    <script src="scripts/utils/ligthbox.js" defer></script>
+    <script src="scripts/pages/photographer.js"></script>
+
+
+
+</body>
+
+</html>
