@@ -18,21 +18,23 @@
         <div class="photograph-header">
             <button class="contact_button" onclick="displayModal()">Contactez-moi</button>
         </div>
-
-        <div class="photograph-tri">
-            <label for="trier">Trier par</label>
-            <select name="Trier" id="trier">
-                <option value="1" id="Popularité">Popularité</option>
-                <option value="2" id="date">Date</option>
-                <option value="3" id="titre">Titre</option>
-            </select>
+        <!-- tri -->
+        <div class="tri">
+            <label for="trier">Trier par :</label>
+            <select>
+            <option value="Populaire">&ensp;Popularité</option>
+            <option value="Date">&ensp;Date</option>
+            <option value="titre">&ensp;Titre</option>
+        </select>
         </div>
+        <!-- galerie media -->
         <div class="gallerry">
 
         </div>
         <div id="contact_modal">
             <div class="modal">
                 <header>
+                    <h1 class="titre-modal">Contactez-moi</h1>
                     <img src="assets/icons/close.svg" onclick="closeModal()" />
                 </header>
                 <form id="form">
@@ -52,25 +54,37 @@
                         <label>Votre message</label><br>
                         <textarea class="text-control success" id="message" rows="10" name="message"></textarea><br>
                     </div>
-                    <button class="contact_button">Envoyer</button>
+                    <button class="contact_button" id="modal-bouton">Envoyer</button>
                 </form>
             </div>
         </div>
-        <div class="ligthbox-modal" id="light-modal">
+
+        <div class="ligthbox-modal" id="Lmodal">
             <span class="close">&times;</span>
-            <div class="content-modal">
-                <img src="" alt="" type="video/mp4" controls>
+
+            <div class="content-modal" id="track"></div>
+            <div class="controls">
+                <i id="prev" class="control prev-slide fa-solid fa-angle-left"></i>
+                <i id="next" class="control next-slide fa-solid fa-angle-right"></i>
             </div>
         </div>
-
+        <!-- footer du main -->
+        <footer class="infos">
+            <div class="infos__likes">
+                <p class="infos__likes__number"></p>
+                <i class="infos__likes__icone fas fa-heart"></i>
+            </div>
+            <p class="infos__price"></p>
+        </footer>
     </main>
+
 
 
     <script src="scripts/factories/media.js"></script>
     <script src="scripts/factories/profil.js"></script>
     <script src="scripts/utils/contactForm.js"></script>
-    <script src="scripts/utils/ligthbox.js" defer></script>
-    <script src="scripts/pages/photographer.js"></script>
+    <script type="module" src="scripts/pages/photographer.js"></script>
+    <!-- <script src="scripts/utils/ligthbox.js"></script> -->
 
 
 

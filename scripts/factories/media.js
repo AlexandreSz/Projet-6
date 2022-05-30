@@ -7,9 +7,11 @@ function mediaFactory(data) {
     const coeur = `assets/photographers/${likes}`;
 
 
+
     function getUserCardDOM3() {
         const div = document.createElement("div");
-        div.setAttribute("class", "photo")
+        div.setAttribute("class", "photo");
+
         const lien = document.createElement("a");
         const span = document.createElement("span");
         span.setAttribute("class", "info");
@@ -29,24 +31,27 @@ function mediaFactory(data) {
             const video = document.createElement("video");
             video.setAttribute("src", _video);
             lien.setAttribute("href", _video);
+            lien.setAttribute("id", id);
+            lien.setAttribute("title", title)
             video.setAttribute("type", "video/mp4");
             video.setAttribute("controls", "true");
             video.setAttribute("class", "media");
-
             div.appendChild(lien)
             lien.appendChild(video)
             div.appendChild(span);
             span.appendChild(titres);
             span.appendChild(like);
             like.appendChild(nbLike);
-            nbLike.appendChild(i);
+            like.appendChild(i);
 
         } else {
 
             const img = document.createElement("img");
             img.setAttribute("src", picture);
-            lien.setAttribute("href", picture);
             img.setAttribute("class", "media");
+            lien.setAttribute("href", picture);
+            lien.setAttribute("id", id);
+            lien.setAttribute("title", title)
 
             div.appendChild(lien)
             lien.appendChild(img);
@@ -54,13 +59,16 @@ function mediaFactory(data) {
             span.appendChild(titres);
             span.appendChild(like);
             like.appendChild(nbLike);
-            nbLike.appendChild(i);
+            like.appendChild(i);
         }
 
 
         return (div);
 
     }
+
+
+
 
 
 
