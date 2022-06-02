@@ -92,13 +92,27 @@
         display: flex;
         width: 350px;
         margin: 0 auto;
-        justify-content: space-between;
         color: #D3573C;
         margin-top: 8px;
     }
     
-    .gallerry .photo span like nbLike #coeur {
-        padding-left: 4px;
+    .gallerry .photo .info titres {
+        display: flex;
+        margin-left: 0;
+    }
+    
+    .gallerry .photo .info .like {
+        display: flex;
+        margin-left: auto;
+    }
+    
+    .gallerry .photo .info .like #coeur {
+        padding-top: 3px;
+        cursor: pointer;
+    }
+    
+    .gallerry .photo .info .like #nbLike {
+        padding-right: 5px;
     }
     
     .gallerry video {

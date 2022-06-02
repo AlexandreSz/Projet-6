@@ -68,7 +68,8 @@ async function init() {
     const { photographers, media } = await getPhotographers();
     displayData(photographers, media);
     lightbox();
-    manageLikes()
+    manageLikes();
+
 
 };
 

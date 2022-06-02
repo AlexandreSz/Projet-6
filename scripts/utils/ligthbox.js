@@ -5,7 +5,7 @@ export function lightbox() {
     const close = document.querySelector('.close');
     // const links = document.querySelectorAll('.gallerry a');
     const links = Array.from(document.querySelectorAll('.gallerry a'))
-        // console.log(linksArray)
+    console.log(links)
 
     // On ajoute l'écouteur click sur les liens
     for (let link of links) {
@@ -17,11 +17,11 @@ export function lightbox() {
             const content = modale.querySelector(".content-modal");
             // console.log(content)
             content.src = this.href;
-            let ext = content.src[content.src.length - 1].toLowerCase();
+            let type = this.dataset.type;
             // console.log(ext);
             // console.log(ext == 'g')
             // console.log(content.src);
-            if (ext == "g") {
+            if (type == "img") {
                 let img = document.createElement('img');
                 img.src = content.src;
                 img.setAttribute('id', 'lightbox-media');
@@ -47,7 +47,8 @@ export function lightbox() {
             const imageBox = document.getElementById('lightbox-media');
             let prev = document.getElementById('prev');
             let next = document.getElementById('next');
-            let index;
+            let index = links.indexOf(link);
+            console.log(index)
 
 
 
@@ -60,6 +61,7 @@ export function lightbox() {
                 } else {
                     index = 0;
                     imageBox.setAttribute('src', links[index])
+
                 }
             })
 
