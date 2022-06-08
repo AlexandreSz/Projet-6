@@ -21,11 +21,11 @@ function manageLikes() {
                 // Increment by 1 the number of likes
             if (like1 === currentLike) {
                 likes.textContent = Number(likes.textContent) + 1;
-                pageLikesElement.textContent = sumOfAllMediasLikes() + 1;
+                pageLikesElement.textContent++
 
             } else if (like1 > currentLike) {
                 likes.textContent = Number(likes.textContent) - 1;
-                pageLikesElement.textContent = sumOfAllMediasLikes() - 1;
+                pageLikesElement.textContent--
             }
         })
     }
