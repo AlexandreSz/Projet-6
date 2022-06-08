@@ -18,7 +18,7 @@ function mediaFactory(data) {
         const titres = document.createElement("titres");
         titres.textContent = title;
         const i = document.createElement("i");
-        i.setAttribute("class", "fa-regular fa-heart");
+        i.setAttribute("class", "fa-solid fa-heart");
         i.setAttribute("id", "coeur");
         const like = document.createElement("like");
         like.setAttribute("class", "like");
@@ -35,7 +35,7 @@ function mediaFactory(data) {
             lien.setAttribute("href", _video);
             lien.setAttribute("data-id", id);
             lien.setAttribute("data-title", title);
-            video.setAttribute("data-type", "video/mp4");
+            lien.setAttribute("data-type", 'video/mp4');
             video.setAttribute("controls", "true");
             video.setAttribute("class", "media");
             div.appendChild(lien)
@@ -45,6 +45,7 @@ function mediaFactory(data) {
             span.appendChild(like);
             like.appendChild(nbLike);
             like.appendChild(i);
+
 
         } else {
 
@@ -63,6 +64,7 @@ function mediaFactory(data) {
             span.appendChild(like);
             like.appendChild(nbLike);
             like.appendChild(i);
+
         }
 
 

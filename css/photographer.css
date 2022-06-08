@@ -109,6 +109,7 @@
     .gallerry .photo .info .like #coeur {
         padding-top: 3px;
         cursor: pointer;
+        opacity: 1;
     }
     
     .gallerry .photo .info .like #nbLike {
@@ -233,7 +234,7 @@
     }
     
     .content-modal {
-        display: flex;
+        display: grid;
         align-items: center;
         justify-content: center;
         width: 100%;

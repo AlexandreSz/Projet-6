@@ -18,6 +18,8 @@ export function lightbox() {
             // console.log(content)
             content.src = this.href;
             let type = this.dataset.type;
+            let titre = this.dataset.title;
+
             // console.log(ext);
             // console.log(ext == 'g')
             // console.log(content.src);
@@ -25,26 +27,38 @@ export function lightbox() {
                 let img = document.createElement('img');
                 img.src = content.src;
                 img.setAttribute('id', 'lightbox-media');
+                img.setAttribute('data-type', type);
+                let title = document.createElement('span');
+                title.setAttribute("class", "titre");
+                title.innerHTML = titre;
+
                 while (content.firstChild) {
                     content.removeChild(content.lastChild);
                 }
-                content.appendChild(img)
+                content.appendChild(img);
+                content.appendChild(title);
             } else {
                 let vid = document.createElement('video');
                 vid.src = content.src;
                 vid.type = "video/mp4";
                 vid.controls = true;
                 vid.setAttribute('id', 'lightbox-media');
+                vid.setAttribute('data-type', type);
+                let title = document.createElement('span');
+                title.setAttribute("class", "titre");
+                title.innerHTML = titre;
                 while (content.firstChild) {
                     content.removeChild(content.lastChild);
                 }
-                content.appendChild(vid)
+                content.appendChild(vid);
+                content.appendChild(title);
             }
 
             // ************
             // slide ******
             // ************
             const imageBox = document.getElementById('lightbox-media');
+
             let prev = document.getElementById('prev');
             let next = document.getElementById('next');
             let index = links.indexOf(link);
@@ -59,6 +73,7 @@ export function lightbox() {
                     console.log(index < links.length)
                     imageBox.setAttribute('src', links[index])
 
+
                 } else {
                     index = 0;
                     imageBox.setAttribute('src', links[index])
@@ -71,9 +86,11 @@ export function lightbox() {
                 index -= 1;
                 if (index >= 0) {
                     imageBox.setAttribute('src', links[index])
+
                 } else {
                     index = links.length - 1;
                     imageBox.setAttribute('src', links[index])
+
                 }
             })
 

@@ -4,6 +4,7 @@ function manageLikes() {
 
 
     const mediaHeartsElements = Array.from(document.querySelectorAll('#coeur'));
+
     const mediaLikesNumberElements = document.querySelectorAll('.nbLike');
     const pageLikesElement = document.querySelector('.infos__likes__number');
 
@@ -22,10 +23,12 @@ function manageLikes() {
             if (like1 === currentLike) {
                 likes.textContent = Number(likes.textContent) + 1;
                 pageLikesElement.textContent++
+                    mediaHeart.style.color = "red";
 
             } else if (like1 > currentLike) {
                 likes.textContent = Number(likes.textContent) - 1;
                 pageLikesElement.textContent--
+                    mediaHeart.style.color = "#D3573C";
             }
         })
     }
