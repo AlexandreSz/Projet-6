@@ -58,6 +58,7 @@ export function lightbox() {
                 if (index < links.length) {
                     console.log(index < links.length)
                     imageBox.setAttribute('src', links[index])
+
                 } else {
                     index = 0;
                     imageBox.setAttribute('src', links[index])

@@ -24,7 +24,7 @@ function mediaFactory(data) {
         like.setAttribute("class", "like");
         const nbLike = document.createElement("nbLike");
         nbLike.setAttribute("class", "nbLike");
-        nbLike.setAttribute("id", "nbLike");
+        nbLike.setAttribute("id", likes);
         nbLike.setAttribute("data-like", likes);
         nbLike.textContent = likes;
 
