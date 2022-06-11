@@ -16,6 +16,7 @@ function mediaFactory(data) {
         const span = document.createElement("span");
         span.setAttribute("class", "info");
         const titres = document.createElement("titres");
+        titres.setAttribute('data-title', title);
         titres.textContent = title;
         const i = document.createElement("i");
         i.setAttribute("class", "fa-solid fa-heart");
