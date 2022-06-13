@@ -9,8 +9,12 @@ function photographerFactory(data) {
         const article = document.createElement("article");
         const lien = document.createElement("a");
         lien.setAttribute("href", "./photographer.html?id=" + id)
+        lien.setAttribute("aria-label", name);
+        lien.setAttribute("alt", name);
         const img = document.createElement('img');
         img.setAttribute("src", picture);
+        img.setAttribute("aria-label", name);
+        img.setAttribute("alt", name);
         const h2 = document.createElement('h2');
         h2.textContent = name;
         const h3 = document.createElement('h3');

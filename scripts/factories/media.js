@@ -13,6 +13,8 @@ function mediaFactory(data) {
         div.setAttribute("class", "photo");
 
         const lien = document.createElement("a");
+        lien.setAttribute("aria-label", title);
+        lien.setAttribute("alt", title);
         const span = document.createElement("span");
         span.setAttribute("class", "info");
         const titres = document.createElement("titres");
@@ -23,10 +25,12 @@ function mediaFactory(data) {
         i.setAttribute("id", "coeur");
         const like = document.createElement("like");
         like.setAttribute("class", "like");
+        like.setAttribute("aria-label", "likes")
         const nbLike = document.createElement("nbLike");
         nbLike.setAttribute("class", "nbLike");
         nbLike.setAttribute("id", likes);
         nbLike.setAttribute("data-like", likes);
+        nbLike.setAttribute("aria-label", "likes")
         nbLike.textContent = likes;
 
 
@@ -39,6 +43,7 @@ function mediaFactory(data) {
             lien.setAttribute("data-type", 'video/mp4');
             video.setAttribute("controls", "true");
             video.setAttribute("class", "media");
+            video.setAttribute("alt", title);
             div.appendChild(lien)
             lien.appendChild(video)
             div.appendChild(span);
@@ -53,6 +58,7 @@ function mediaFactory(data) {
             const img = document.createElement("img");
             img.setAttribute("src", picture);
             img.setAttribute("class", "media");
+            img.setAttribute("alt", title);
             lien.setAttribute("href", picture);
             lien.setAttribute("data-id", id);
             lien.setAttribute("data-title", title)

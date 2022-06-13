@@ -40,14 +40,14 @@
     }
     
     .photograph-header .info h2 {
-        color: #D3573C;
+        color: #be4d36;
         font-size: 52px;
         margin-top: 0;
         margin-bottom: 1rem;
     }
     
     .photograph-header .info h3 {
-        color: #D3573C;
+        color: #be4d36;
         font-size: 18px;
         margin-top: 0;
         margin-bottom: 2rem;
@@ -92,7 +92,7 @@
         display: flex;
         width: 350px;
         margin: 0 auto;
-        color: #D3573C;
+        color: #be4d36;
         margin-top: 8px;
     }
     
@@ -306,7 +306,7 @@
         position: fixed;
         bottom: 0;
         right: 2.5rem;
-        background-color: #D3573C;
+        background-color: #c75038;
         font-size: 1.3rem;
         font-weight: 600;
         display: flex;

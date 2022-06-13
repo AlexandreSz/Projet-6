@@ -31,10 +31,11 @@ export function lightbox() {
                 img.src = content.src;
                 img.setAttribute('id', 'lightbox-media');
                 img.setAttribute('data-type', type);
+                img.setAttribute('alt', titre);
+                img.setAttribute('aria-label', titre);
                 let title = document.createElement('span');
                 title.setAttribute("class", "titre");
                 title.setAttribute("id", "title-media");
-                title.setAttribute("data-title", titre);
                 title.innerHTML = titre;
 
                 while (content.firstChild) {
@@ -49,10 +50,11 @@ export function lightbox() {
                 vid.controls = true;
                 vid.setAttribute('id', 'lightbox-media');
                 vid.setAttribute('data-type', type);
+                vid.setAttribute('alt', titre);
+                vid.setAttribute('aria-label', titre);
                 let title = document.createElement('span');
                 title.setAttribute("class", "titre");
                 title.setAttribute("id", "title-media");
-                title.setAttribute("data-title", titre);
                 title.innerHTML = titre;
                 while (content.firstChild) {
                     content.removeChild(content.lastChild);
@@ -65,8 +67,9 @@ export function lightbox() {
             // slide ******
             // ************
             const imageBox = document.getElementById('lightbox-media');
+            console.log(imageBox)
             const titleBox = document.getElementById('title-media');
-            console.log(titleBox.dataset.title)
+            console.log(titleBox)
             let prev = document.getElementById('prev');
             let next = document.getElementById('next');
             let index = links.indexOf(link);
@@ -83,17 +86,19 @@ export function lightbox() {
 
             next.addEventListener('click', function() {
                 index += 1;
-
                 if (index < links.length) {
                     console.log(index < links.length);
                     imageBox.setAttribute('src', links[index]);
+                    imageBox.setAttribute('alt', titles[index].innerHTML);
+                    imageBox.setAttribute('aria-label', titles[index].innerHTML);
                     titleBox.innerHTML = titles[index].innerHTML
 
 
                 } else {
                     index = 0;
-
                     imageBox.setAttribute('src', links[index]);
+                    imageBox.setAttribute('alt', titles[index].innerHTML);
+                    imageBox.setAttribute('aria-label', titles[index].innerHTML);
                     titleBox.innerHTML = titles[index].innerHTML
 
                 }
@@ -103,12 +108,16 @@ export function lightbox() {
             prev.addEventListener('click', function() {
                 index -= 1;
                 if (index >= 0) {
-                    imageBox.setAttribute('src', links[index])
+                    imageBox.setAttribute('src', links[index]);
+                    imageBox.setAttribute('alt', titles[index].innerHTML);
+                    imageBox.setAttribute('aria-label', titles[index].innerHTML);
                     titleBox.innerHTML = titles[index].innerHTML
 
                 } else {
                     index = links.length - 1;
-                    imageBox.setAttribute('src', links[index])
+                    imageBox.setAttribute('src', links[index]);
+                    imageBox.setAttribute('alt', titles[index].innerHTML);
+                    imageBox.setAttribute('aria-label', titles[index].innerHTML);
                     titleBox.innerHTML = titles[index].innerHTML
 
                 }

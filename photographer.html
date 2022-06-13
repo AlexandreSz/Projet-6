@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 
 <head>
     <link href="css/style.css" rel="stylesheet" type="text/css" />
@@ -12,7 +12,7 @@
 
 <body>
     <header>
-        <img src="assets/images/logo.png" class="logo" />
+        <img src="assets/images/logo.png" alt="Fisheye page d'accueil" class="logo" />
     </header>
     <main id="main">
         <div class="photograph-header">
@@ -20,7 +20,7 @@
         </div>
         <!-- tri -->
         <div class="tri">
-            <label for="trier">Trier par :</label>
+            <label for="Trier">Trier par :</label>
             <select name="Tri">
             <option value="populaire">&ensp;Popularité</option>
             <option value="date">&ensp;Date</option>
@@ -35,7 +35,7 @@
             <div class="modal">
                 <header>
                     <h1 class="titre-modal">Contactez-moi</h1>
-                    <img src="assets/icons/close.svg" onclick="closeModal()" />
+                    <img src="assets/icons/close.svg" aria-label="Fermer" onclick="closeModal()" />
                 </header>
                 <form id="form">
                     <div class="formData">

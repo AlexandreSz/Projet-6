@@ -10,7 +10,7 @@ function photographerFactory(data) {
         div.setAttribute("class", "photo")
         const img = document.createElement("img");
         img.setAttribute("src", picture);
-
+        img.setAttribute("alt", name);
         div.appendChild(img);
 
         return (div);
@@ -22,6 +22,7 @@ function photographerFactory(data) {
         div.setAttribute("class", "info")
         const img = document.createElement("img");
         img.setAttribute("src", picture);
+        img.setAttribute("alt", name);
         const h2 = document.createElement('h2');
         h2.textContent = name;
         const h3 = document.createElement('h3');
