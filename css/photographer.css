@@ -110,6 +110,7 @@
         padding-top: 3px;
         cursor: pointer;
         opacity: 1;
+        margin-left: 8px;
     }
     
     .gallerry .photo .info .like #nbLike {

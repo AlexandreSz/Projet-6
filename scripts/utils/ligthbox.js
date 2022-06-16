@@ -10,6 +10,7 @@ export function lightbox() {
     console.log(titles)
 
 
+
     // On ajoute l'écouteur click sur les liens
     for (let link of links) {
         link.addEventListener("click", function(e) {
@@ -30,7 +31,7 @@ export function lightbox() {
                 let img = document.createElement('img');
                 img.src = content.src;
                 img.setAttribute('id', 'lightbox-media');
-                img.setAttribute('data-type', type);
+                img.setAttribute('data-type', 'img');
                 img.setAttribute('alt', titre);
                 img.setAttribute('aria-label', titre);
                 let title = document.createElement('span');
@@ -49,7 +50,7 @@ export function lightbox() {
                 vid.type = "video/mp4";
                 vid.controls = true;
                 vid.setAttribute('id', 'lightbox-media');
-                vid.setAttribute('data-type', type);
+                vid.setAttribute('data-type', 'video/mp4');
                 vid.setAttribute('alt', titre);
                 vid.setAttribute('aria-label', titre);
                 let title = document.createElement('span');
@@ -67,9 +68,10 @@ export function lightbox() {
             // slide ******
             // ************
             const imageBox = document.getElementById('lightbox-media');
-            console.log(imageBox)
+            console.log(imageBox.dataset.type)
             const titleBox = document.getElementById('title-media');
             console.log(titleBox)
+
             let prev = document.getElementById('prev');
             let next = document.getElementById('next');
             let index = links.indexOf(link);
@@ -80,18 +82,16 @@ export function lightbox() {
 
 
 
-
-
-
-
             next.addEventListener('click', function() {
                 index += 1;
+
                 if (index < links.length) {
                     console.log(index < links.length);
                     imageBox.setAttribute('src', links[index]);
                     imageBox.setAttribute('alt', titles[index].innerHTML);
                     imageBox.setAttribute('aria-label', titles[index].innerHTML);
                     titleBox.innerHTML = titles[index].innerHTML
+                    console.log(imageBox.dataset.type)
 
 
                 } else {
@@ -103,6 +103,8 @@ export function lightbox() {
 
                 }
             })
+
+
 
 
             prev.addEventListener('click', function() {
@@ -122,6 +124,56 @@ export function lightbox() {
 
                 }
             })
+
+
+
+            //fleches clavier
+            window.addEventListener("keydown", checkKeyPress, false); //on initialise l'écoute du clavier
+            function checkKeyPress(key) {
+                if (key.keyCode == "37") { //si fleche de gauche
+
+                    index -= 1;
+                    if (index >= 0) {
+                        imageBox.setAttribute('src', links[index]);
+                        imageBox.setAttribute('alt', titles[index].innerHTML);
+                        imageBox.setAttribute('aria-label', titles[index].innerHTML);
+                        titleBox.innerHTML = titles[index].innerHTML
+
+                    } else {
+                        index = links.length - 1;
+                        imageBox.setAttribute('src', links[index]);
+                        imageBox.setAttribute('alt', titles[index].innerHTML);
+                        imageBox.setAttribute('aria-label', titles[index].innerHTML);
+                        titleBox.innerHTML = titles[index].innerHTML
+
+                    }
+
+                } else if (key.keyCode == "39") { //idem droite
+
+                    index += 1;
+
+                    if (index < links.length) {
+                        console.log(index < links.length);
+                        imageBox.setAttribute('src', links[index]);
+                        imageBox.setAttribute('alt', titles[index].innerHTML);
+                        imageBox.setAttribute('aria-label', titles[index].innerHTML);
+                        titleBox.innerHTML = titles[index].innerHTML
+                        console.log(imageBox.dataset.type)
+
+
+                    } else {
+                        index = 0;
+                        imageBox.setAttribute('src', links[index]);
+                        imageBox.setAttribute('alt', titles[index].innerHTML);
+                        imageBox.setAttribute('aria-label', titles[index].innerHTML);
+                        titleBox.innerHTML = titles[index].innerHTML
+
+                    }
+
+                } else if (key.keyCode == "27") {
+                    modale.classList.remove("show")
+                }
+            }
 
             //test affichage modale
             modale.classList.add("show");

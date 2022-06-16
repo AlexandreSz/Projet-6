@@ -1,6 +1,6 @@
 import { lightbox } from '../utils/ligthbox.js';
 import { manageLikes } from '../utils/likes.js';
-import { tri } from '../utils/tri.js';
+// import { tri } from '../utils/tri.js';
 
 
 
@@ -70,7 +70,7 @@ async function init() {
     displayData(photographers, media);
     lightbox();
     manageLikes();
-    tri();
+
 
 
 };
