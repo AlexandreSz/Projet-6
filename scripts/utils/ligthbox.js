@@ -8,8 +8,8 @@ export function lightbox() {
     console.log(links)
     const titles = Array.from(document.querySelectorAll('.info titres'))
     console.log(titles)
-
-
+    const types = Array.from(document.querySelectorAll('.gallerry a[data-type]'))
+    console.log(types)
 
     // On ajoute l'écouteur click sur les liens
     for (let link of links) {
@@ -84,7 +84,16 @@ export function lightbox() {
 
             next.addEventListener('click', function() {
                 index += 1;
+                if (types[index] === 'img') {
 
+                    content.appendChild(document.createElement('img'))
+                    content.removeChild(content.lastChild);
+                } else {
+                    content.appendChild(document.createElement('video'))
+                    content.removeChild(content.lastChild);
+
+
+                }
                 if (index < links.length) {
                     console.log(index < links.length);
                     imageBox.setAttribute('src', links[index]);
