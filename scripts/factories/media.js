@@ -62,7 +62,7 @@ function mediaFactory(data) {
             lien.setAttribute("href", picture);
             lien.setAttribute("data-id", id);
             lien.setAttribute("data-title", title)
-            lien.setAttribute("data-type", 'img')
+            lien.setAttribute("data-type", "img")
 
             div.appendChild(lien)
             lien.appendChild(img);
