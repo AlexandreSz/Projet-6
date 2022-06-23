@@ -21,8 +21,8 @@
         <!-- tri -->
         <div class="tri">
             <label for="Trier">Trier par :</label>
-            <select name="Tri">
-            <option value="populaire">&ensp;Popularité</option>
+            <select name="tri" id="tri-select">
+            <option value="populaire" selected>&ensp;Popularité</option>
             <option value="date">&ensp;Date</option>
             <option value="titre">&ensp;Titre</option>
         </select>
@@ -60,7 +60,7 @@
         </div>
 
         <div class="ligthbox-modal" id="Lmodal">
-            <span class="close">&times;</span>
+            <i class="fa-solid fa-times close"></i>
 
             <div class="content-modal" id="track"></div>
             <div class="controls">

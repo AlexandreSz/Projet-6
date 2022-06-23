@@ -11,6 +11,7 @@ export function lightbox() {
     const types = Array.from(document.querySelectorAll('data-type'))
     console.log(types)
 
+
     // On ajoute l'écouteur click sur les liens
     for (let link of links) {
         link.addEventListener("click", function(e) {
@@ -41,7 +42,7 @@ export function lightbox() {
             let next = document.getElementById('next');
             let index = links.indexOf(link);
 
-            console.log(index)
+
 
 
             next.addEventListener('click', function() {
@@ -76,6 +77,9 @@ export function lightbox() {
 
             //test affichage modale
             modale.classList.add("show");
+            modale.setAttribute('active', '');
+            const foot = document.querySelector('.infos')
+            foot.style.display = "none";
 
             // On active le bouton close
             close.addEventListener("click", function() {
@@ -91,7 +95,7 @@ export function lightbox() {
 
 
 
-
+//------------------------------------------------------------------------------------------------------------------
 //------------------------------------------------------------------------------------------------------------------
 
 

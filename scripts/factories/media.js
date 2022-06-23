@@ -1,5 +1,5 @@
 function mediaFactory(data) {
-    const { image, video, title, likes, id } = data;
+    const { image, video, title, likes, id, date } = data;
 
     const picture = `assets/photographers/${image}`;
     const _video = `assets/photographers/${video}`;
@@ -84,5 +84,5 @@ function mediaFactory(data) {
 
 
 
-    return { titre, coeur, _video, picture, getUserCardDOM3 }
+    return { titre, coeur, _video, picture, date, getUserCardDOM3 }
 }

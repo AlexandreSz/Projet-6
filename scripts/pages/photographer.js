@@ -1,6 +1,6 @@
 import { lightbox } from '../utils/ligthbox.js';
 import { manageLikes } from '../utils/likes.js';
-
+import { tri } from '../utils/tri.js';
 
 
 
@@ -20,7 +20,7 @@ async function getPhotographers() {
 
 
 
-function displayData(photographers, media) {
+function displayData(photographers, medias) {
     //Récupération de la chaine de requête dans l'url
 
     const queryString_url_id = window.location.search;
@@ -33,14 +33,24 @@ function displayData(photographers, media) {
     const _id = urlsearchParams.get("id");
     // console.log(_id);
 
+
     const filteredPhotographers = photographers.filter(obj => obj.id == _id);
-    const filteredMedia = media.filter(obj => obj.photographerId == _id);
+    const filteredMedia = medias.filter(obj => obj.photographerId == _id);
     // console.log(filteredPhotographers);
     const totalLikes = document.querySelector(".infos__likes__number");
     const info2 = document.querySelector(".infos__price");
     const photoModal = document.querySelector(".titre-modal");
     const photographersSection = document.querySelector(".photograph-header");
     const mediaSection = document.querySelector(".gallerry");
+
+    // tri du media par popularité car c'est l'option de base
+    filteredMedia.sort((a, b) => (a.likes - b.likes));
+    filteredMedia.reverse();
+
+    const selectTri = document.getElementById('tri-select');
+
+
+
     filteredPhotographers.forEach((photographer) => {
         const photographerModel = photographerFactory(photographer);
         const userCardDOM1 = photographerModel.getUserCardDOM1();
@@ -52,14 +62,27 @@ function displayData(photographers, media) {
         const userCardDOM5 = photographerModel.getUserCardDOM5();
         info2.appendChild(userCardDOM5);
 
-        filteredMedia.forEach((media) => {
-            const mediaModel = mediaFactory(media);
+        filteredMedia.forEach((medias) => {
+            const mediaModel = mediaFactory(medias);
             const userCardDOM3 = mediaModel.getUserCardDOM3();
             mediaSection.append(userCardDOM3);
 
-
-
         });
+
+        selectTri.addEventListener('change', manageSort);
+
+        function manageSort(event) {
+            tri(event, filteredMedia);
+            mediaSection.innerHTML = '';
+            filteredMedia.forEach((medias) => {
+                const mediaModel = mediaFactory(medias);
+                const userCardDOM3 = mediaModel.getUserCardDOM3();
+                mediaSection.append(userCardDOM3);
+            });
+            lightbox();
+            manageLikes();
+        }
+
     });
 
 };
@@ -70,9 +93,6 @@ async function init() {
     displayData(photographers, media);
     lightbox();
     manageLikes();
-
-
-
 
 };
 

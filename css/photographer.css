@@ -127,6 +127,7 @@
     /* TRI des images */
     
     .tri {
+        position: relative;
         padding-left: 6.2rem;
         padding-top: 2rem;
         padding-bottom: 2rem;
@@ -137,12 +138,24 @@
     }
     
     .tri select {
+        position: relative;
         padding: 1rem;
         border: none;
         border-radius: 1rem;
         background-color: #901C1C;
         color: #FAFAFA;
         font-size: 1rem;
+    }
+    
+    .tri-selected:after {
+        position: absolute;
+        content: "";
+        top: 14px;
+        right: 10px;
+        width: 0;
+        height: 0;
+        border: 6px solid transparent;
+        border-color: #fff transparent transparent transparent;
     }
     /* modal de contact */
     
@@ -231,7 +244,7 @@
         top: 0;
         bottom: 0;
         right: 0;
-        background-color: rgba(255, 255, 255, 0.7);
+        background-color: rgba(255, 255, 255, 1);
     }
     
     .content-modal {
@@ -254,22 +267,27 @@
     }
     
     .content-modal img {
-        width: 90vh;
-        height: 85vh;
+        width: 100vh;
+        height: 95vh;
         object-fit: cover;
     }
     
     .content-modal video {
-        width: 90vh;
+        width: 100vh;
+        height: 95vh;
         object-fit: cover;
     }
     
     .ligthbox-modal .close {
         color: #901C1C;
-        font-size: 4em;
-        position: fixed;
-        right: 15%;
         cursor: pointer;
+        font-size: 2rem;
+        position: fixed;
+        right: 16px;
+    }
+    
+    .ligthbox-modal .titre {
+        color: #901C1C;
     }
     
     #modal_btn {
@@ -282,10 +300,14 @@
         display: flex;
         position: absolute;
         top: 45%;
-        left: 25.5%;
+        /* left: 25.5%; */
         justify-content: space-between;
-        width: 50%;
+        width: 100%;
         z-index: 1000;
+    }
+    
+    .controls #prev {
+        padding-left: 16px;
     }
     
     .control {
@@ -295,8 +317,6 @@
         justify-content: center;
         height: 40px;
         width: 40px;
-        border-radius: 50%;
-        opacity: .5;
         cursor: pointer;
         color: #901C1C;
         font-size: 3rem;
