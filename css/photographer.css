@@ -245,6 +245,7 @@
         bottom: 0;
         right: 0;
         background-color: rgba(255, 255, 255, 1);
+        width: 100%;
     }
     
     .content-modal {
@@ -283,7 +284,7 @@
         cursor: pointer;
         font-size: 2rem;
         position: fixed;
-        right: 16px;
+        right: 15%;
     }
     
     .ligthbox-modal .titre {
@@ -300,9 +301,9 @@
         display: flex;
         position: absolute;
         top: 45%;
-        /* left: 25.5%; */
+        left: 15%;
         justify-content: space-between;
-        width: 100%;
+        width: 70%;
         z-index: 1000;
     }
     
