@@ -41,7 +41,7 @@ function mediaFactory(data) {
             lien.setAttribute("data-id", id);
             lien.setAttribute("data-title", title);
             lien.setAttribute("data-type", 'video/mp4');
-            video.setAttribute("controls", "true");
+            // video.setAttribute("controls", "true");
             video.setAttribute("class", "media");
             video.setAttribute("alt", title);
             div.appendChild(lien)
