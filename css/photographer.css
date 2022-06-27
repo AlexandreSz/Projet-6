@@ -78,6 +78,7 @@
         grid-template-columns: repeat(3, 1fr);
         margin: 0 100px;
         gap: 2rem;
+        margin-top: 1rem;
     }
     
     .gallerry img {
@@ -127,35 +128,53 @@
     /* TRI des images */
     
     .tri {
-        position: relative;
-        padding-left: 6.2rem;
-        padding-top: 2rem;
-        padding-bottom: 2rem;
+        color: white;
+        font-family: Arial, Helvetica, sans-serif;
     }
-    
-    .tri label {
-        font-weight: bold;
-    }
+    /* On masque le select */
     
     .tri select {
-        position: relative;
-        padding: 1rem;
-        border: none;
-        border-radius: 1rem;
-        background-color: #901C1C;
-        color: #FAFAFA;
-        font-size: 1rem;
+        display: none;
     }
     
-    .tri-selected:after {
-        position: absolute;
+    .new-select {
+        background-color: #901C1C;
+        position: relative;
+        padding: 7px;
+        width: 15%;
+        margin-left: 6.3rem;
+    }
+    
+    .new-select::after {
         content: "";
+        position: absolute;
         top: 14px;
-        right: 10px;
-        width: 0;
-        height: 0;
-        border: 6px solid transparent;
+        right: 5px;
+        border: 6px solid;
         border-color: #fff transparent transparent transparent;
+        height: 0;
+    }
+    
+    .new-select.active::after {
+        border-color: transparent transparent #fff transparent;
+        top: 7px;
+    }
+    
+    .select-items div {
+        margin-left: 6.3rem;
+        width: 15%;
+        background-color: #901C1C;
+        padding: 7px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        cursor: pointer;
+    }
+    
+    .select-hide {
+        display: none;
+    }
+    
+    option:hover {
+        border-radius: 5px;
     }
     /* modal de contact */
     

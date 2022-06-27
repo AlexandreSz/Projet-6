@@ -1,5 +1,6 @@
 import { lightbox } from '../utils/ligthbox.js';
 import { manageLikes } from '../utils/likes.js';
+import { select } from '../utils/select.js';
 import { tri } from '../utils/tri.js';
 
 
@@ -71,6 +72,7 @@ function displayData(photographers, medias) {
 
         selectTri.addEventListener('change', manageSort);
 
+
         function manageSort(event) {
             tri(event, filteredMedia);
             mediaSection.innerHTML = '';
@@ -79,8 +81,10 @@ function displayData(photographers, medias) {
                 const userCardDOM3 = mediaModel.getUserCardDOM3();
                 mediaSection.append(userCardDOM3);
             });
+            console.log(selectTri.value)
             lightbox();
             manageLikes();
+
         }
 
     });
@@ -93,6 +97,7 @@ async function init() {
     displayData(photographers, media);
     lightbox();
     manageLikes();
+    select();
 
 };
 
