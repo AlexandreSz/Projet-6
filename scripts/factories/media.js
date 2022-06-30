@@ -11,7 +11,6 @@ function mediaFactory(data) {
     function getUserCardDOM3() {
         const div = document.createElement("div");
         div.setAttribute("class", "photo");
-
         const lien = document.createElement("a");
         lien.setAttribute("aria-label", title);
         lien.setAttribute("alt", title);
@@ -32,8 +31,6 @@ function mediaFactory(data) {
         nbLike.setAttribute("data-like", likes);
         nbLike.setAttribute("aria-label", "likes")
         nbLike.textContent = likes;
-
-
         if (video) {
             const video = document.createElement("video");
             video.setAttribute("src", _video);
@@ -51,10 +48,7 @@ function mediaFactory(data) {
             span.appendChild(like);
             like.appendChild(nbLike);
             like.appendChild(i);
-
-
         } else {
-
             const img = document.createElement("img");
             img.setAttribute("src", picture);
             img.setAttribute("class", "media");
@@ -63,7 +57,6 @@ function mediaFactory(data) {
             lien.setAttribute("data-id", id);
             lien.setAttribute("data-title", title)
             lien.setAttribute("data-type", "img")
-
             div.appendChild(lien)
             lien.appendChild(img);
             div.appendChild(span);
@@ -71,18 +64,8 @@ function mediaFactory(data) {
             span.appendChild(like);
             like.appendChild(nbLike);
             like.appendChild(i);
-
         }
-
-
         return (div);
-
     }
-
-
-
-
-
-
     return { titre, coeur, _video, picture, date, getUserCardDOM3 }
 }

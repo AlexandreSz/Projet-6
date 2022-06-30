@@ -23,9 +23,9 @@
         <div class="tri">
             <label for="Trier">Trier par :</label>
             <select name="tri" id="tri-select">
-            <option value="populaire" selected>&ensp;Popularité</option>
-            <option value="date">&ensp;Date</option>
-            <option value="titre">&ensp;Titre</option>
+            <option value="populaire">Popularité</option>
+            <option value="date">Date</option>
+            <option value="titre">Titre</option>
         </select>
         </div>
         <!-- galerie media -->
@@ -38,24 +38,24 @@
                     <h1 class="titre-modal">Contactez-moi</h1>
                     <img src="assets/icons/close.svg" aria-label="Fermer" onclick="closeModal()" />
                 </header>
-                <form id="form">
+                <form action="" method="" id="form">
                     <div class="formData">
                         <label>Prénom</label><br>
-                        <input class="text-control success" type="text" id="first" name="first" /><br>
+                        <input class="text-control success" type="text" id="prenom" name="Prénom" aria-label="Entrez votre prénom" aria-required="true" /><br>
                     </div>
                     <div class="formData">
                         <label>Nom</label><br>
-                        <input class="text-control success" type="text" id="lat" name="last" /><br>
+                        <input class="text-control success" type="text" id="nom" name="Nom" aria-label="Entrez votre nom" aria-required="true" /><br>
                     </div>
                     <div class="formData">
                         <label>Email</label><br>
-                        <input class="text-control success" type="text" id="mail" name="mail" /><br>
+                        <input class="text-control success" type="text" id="mail" name="Mail" aria-label="Entrez votre e-mail" aria-required="true" /><br>
                     </div>
                     <div class="formData">
                         <label>Votre message</label><br>
-                        <textarea class="text-control success" id="message" rows="10" name="message"></textarea><br>
+                        <textarea class="text-control success" id="message" rows="10" name="Message" aria-label="Entrez votre message" aria-required="true"></textarea><br>
                     </div>
-                    <button class="contact_button" id="modal-bouton">Envoyer</button>
+                    <button class="contact_button" id="modal-bouton" type="submit" aria-label="Envoyer le formulaire" aria-required="true">Envoyer</button>
                 </form>
             </div>
         </div>

@@ -140,15 +140,16 @@
     .new-select {
         background-color: #901C1C;
         position: relative;
-        padding: 7px;
+        padding: 1rem;
         width: 15%;
         margin-left: 6.3rem;
+        border-radius: 0.5rem;
     }
     
     .new-select::after {
         content: "";
         position: absolute;
-        top: 14px;
+        top: 1.5rem;
         right: 5px;
         border: 6px solid;
         border-color: #fff transparent transparent transparent;
@@ -157,16 +158,21 @@
     
     .new-select.active::after {
         border-color: transparent transparent #fff transparent;
-        top: 7px;
+        top: 1rem;
+    }
+    
+    .select-items {
+        border-radius: 0.5rem;
+        background-color: #901C1C;
+        width: 15%;
+        margin-left: 6.3rem;
+        padding: 1rem;
     }
     
     .select-items div {
-        margin-left: 6.3rem;
-        width: 15%;
-        background-color: #901C1C;
-        padding: 7px;
         border-bottom: 1px solid rgba(255, 255, 255, 0.2);
         cursor: pointer;
+        padding: 0.5rem;
     }
     
     .select-hide {
@@ -353,7 +359,7 @@
         display: flex;
         justify-content: space-between;
         padding: 1.4rem 2.5rem 1.2rem;
-        width: 350px;
+        width: 250px;
         border-radius: 0.5rem 0.5rem 0 0;
         box-sizing: border-box;
     }
@@ -363,6 +369,6 @@
     }
     
     .infos__likes__icone {
-        padding: 0 1rem;
-        padding-top: 1.6rem;
+        padding: 0 1.5rem 0 0.5rem;
+        padding-top: 1.5rem;
     }
