@@ -22,6 +22,7 @@ function mediaFactory(data) {
         const i = document.createElement("i");
         i.setAttribute("class", "fa-solid fa-heart");
         i.setAttribute("id", "coeur");
+        i.setAttribute("tabindex", "0");
         const like = document.createElement("like");
         like.setAttribute("class", "like");
         like.setAttribute("aria-label", "likes")

@@ -14,24 +14,23 @@ function manageLikes() {
         mediaHeart.addEventListener('click', function() {
 
             // Selects the number of likes corresponding to the heart
-            const like1 = mediaHeart.parentElement.querySelector('.nbLike').innerHTML;
-
-            const likes = mediaHeart.parentElement.querySelector('.nbLike');
-            const currentLike = likes.getAttribute('data-like');
-
-            // +1 ou -1 des likes
-            if (like1 === currentLike) {
-                likes.textContent = Number(likes.textContent) + 1;
-                pageLikesElement.textContent++
-                    mediaHeart.style.color = "red";
-
-            } else if (like1 > currentLike) {
-                likes.textContent = Number(likes.textContent) - 1;
-                pageLikesElement.textContent--
-                    mediaHeart.style.color = "#D3573C";
-            }
+            likeDislike(mediaHeart, pageLikesElement);
         })
     }
+
+    // incrément et décrément avec ENTER
+
+
+    for (let mediaHeart of mediaHeartsElements) {
+        mediaHeart.addEventListener('keydown', function(e) {
+            if (e.keyCode == "13") {
+                likeDislike(mediaHeart, pageLikesElement);
+
+            }
+        })
+
+    }
+
     //-------------------------------------------------------------------------------------//
 
     /**
@@ -59,3 +58,22 @@ function manageLikes() {
 }
 
 export { manageLikes }
+
+function likeDislike(mediaHeart, pageLikesElement) {
+    const like1 = mediaHeart.parentElement.querySelector('.nbLike').innerHTML;
+
+    const likes = mediaHeart.parentElement.querySelector('.nbLike');
+    const currentLike = likes.getAttribute('data-like');
+
+    // +1 ou -1 des likes
+    if (like1 === currentLike) {
+        likes.textContent = Number(likes.textContent) + 1;
+        pageLikesElement.textContent++;
+        mediaHeart.style.color = "red";
+
+    } else if (like1 > currentLike) {
+        likes.textContent = Number(likes.textContent) - 1;
+        pageLikesElement.textContent--;
+        mediaHeart.style.color = "#D3573C";
+    }
+}

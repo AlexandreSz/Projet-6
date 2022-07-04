@@ -7,8 +7,9 @@ export function select() {
     const newSelect = document.createElement("div");
     // On lui ajoute la classe "new-select"
     newSelect.classList.add("new-select");
-    newSelect.setAttribute("alt", "Select")
-        // On lui donne le contenu de l'option actuellement choisie dans le select
+    newSelect.setAttribute("alt", "Select");
+    newSelect.setAttribute("tabindex", "0");
+    // On lui donne le contenu de l'option actuellement choisie dans le select
     newSelect.innerHTML = selectElt.options[selectElt.selectedIndex].innerHTML;
     // On crée l'élément dans le DOM
     selectDiv.appendChild(newSelect);

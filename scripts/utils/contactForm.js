@@ -7,6 +7,8 @@ function closeModal() {
     const modal = document.getElementById("contact_modal");
     modal.style.display = "none";
 }
+
+//récupération des données formulaire 
 let btnSpendForm = document.querySelector("#modal-bouton");
 btnSpendForm.addEventListener("click", (e) => {
     e.preventDefault()
