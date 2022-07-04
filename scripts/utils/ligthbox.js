@@ -78,12 +78,13 @@ export function lightbox() {
             //test affichage modale
             modale.classList.add("show");
             modale.setAttribute('active', '');
-            const foot = document.querySelector('.infos')
+            const foot = document.querySelector('.infos');
             foot.style.display = "none";
 
             // On active le bouton close
             close.addEventListener("click", function() {
                 closeLigthBox(modale);
+                foot.style.display = "flex";
             });
         });
     }
