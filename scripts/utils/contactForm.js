@@ -1,11 +1,13 @@
 function displayModal() {
     const modal = document.getElementById("contact_modal");
     modal.style.display = "block";
+    document.getElementById('prenom').focus();
 }
 
 function closeModal() {
     const modal = document.getElementById("contact_modal");
     modal.style.display = "none";
+    document.getElementById('open-modal').focus();
 }
 window.addEventListener("keydown", checkKeyPress, false); //on initialise l'écoute du clavier
 function checkKeyPress(key) {

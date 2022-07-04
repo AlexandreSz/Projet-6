@@ -6,8 +6,7 @@ import { tri } from '../utils/tri.js';
 
 
 async function getPhotographers() {
-    let url = '/data/photographers.json';
-    console.log()
+    let url = './data/photographers.json';
     try {
         let res = await fetch(url);
         return await res.json();
