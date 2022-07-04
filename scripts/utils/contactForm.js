@@ -7,6 +7,12 @@ function closeModal() {
     const modal = document.getElementById("contact_modal");
     modal.style.display = "none";
 }
+window.addEventListener("keydown", checkKeyPress, false); //on initialise l'écoute du clavier
+function checkKeyPress(key) {
+    if (key.keyCode == "27") {
+        closeModal();
+    }
+}
 
 //récupération des données formulaire 
 let btnSpendForm = document.querySelector("#modal-bouton");

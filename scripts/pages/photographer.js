@@ -25,7 +25,7 @@ function displayData(photographers, medias) {
     const filteredPhotographers = photographers.filter(obj => obj.id == _id);
     const filteredMedia = medias.filter(obj => obj.photographerId == _id);
     const info2 = document.querySelector(".infos__price");
-    const photoModal = document.querySelector(".titre-modal");
+    const photoModal = document.querySelector(".head-modal");
     const photographersSection = document.querySelector(".photograph-header");
     const mediaSection = document.querySelector(".gallerry");
 
@@ -43,6 +43,8 @@ function displayData(photographers, medias) {
         photographersSection.appendChild(userCardDOM2);
         const userCardDOM4 = photographerModel.getUserCardDOM4();
         photoModal.appendChild(userCardDOM4);
+        const userCardDOM6 = photographerModel.getUserCardDOM6();
+        photoModal.appendChild(userCardDOM6);
         const userCardDOM5 = photographerModel.getUserCardDOM5();
         info2.appendChild(userCardDOM5);
         filteredMedia.forEach((medias) => {

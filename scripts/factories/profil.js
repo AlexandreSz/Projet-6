@@ -38,15 +38,18 @@ function photographerFactory(data) {
     }
 
     function getUserCardDOM4() {
-
-        const div = document.createElement("div");
-        div.setAttribute("class", "titre")
-        const nom = document.createElement("nom");
-        nom.textContent = name;
-
-        div.appendChild(nom);
-
+        const div = document.createElement("h1");
+        div.setAttribute("id", "nom-modal");
+        div.innerHTML = "Contactez-moi" + "<br/>" + name;
         return (div);
+    }
+
+    function getUserCardDOM6() {
+        const img = document.createElement("img");
+        img.setAttribute("src", "assets/icons/close.svg");
+        img.setAttribute("aria-label", "Fermer");
+        img.setAttribute("onclick", "closeModal()");
+        return (img);
     }
 
     function getUserCardDOM5() {
@@ -61,5 +64,5 @@ function photographerFactory(data) {
         return (div);
     }
 
-    return { name, picture, getUserCardDOM1, getUserCardDOM2, getUserCardDOM4, getUserCardDOM5 }
+    return { name, picture, getUserCardDOM1, getUserCardDOM2, getUserCardDOM4, getUserCardDOM5, getUserCardDOM6 }
 }

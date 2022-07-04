@@ -184,11 +184,17 @@
     }
     /* modal de contact */
     
-    .titre-modal {
+    #nom-modal {
+        display: flex;
         font-weight: bold;
-        font-size: 2rem;
+        font-size: 1.6rem;
         color: #000000;
         margin-bottom: 4rem;
+    }
+    
+    #nom-modal img {
+        display: flex;
+        margin-left: 10rem;
     }
     
     #contact_modal {

@@ -17,7 +17,7 @@
     </a>
     <main id="main">
         <div class="photograph-header">
-            <button class="contact_button" onclick="displayModal()">Contactez-moi</button>
+            <button type="button" aria-haspopup="dialog" aria-controls="dialog" class="contact_button" onclick="displayModal()">Contactez-moi</button>
         </div>
         <!-- tri -->
         <div class="tri">
@@ -32,11 +32,11 @@
         <div class="gallerry">
 
         </div>
+        <!-- Modal de contact -->
         <div id="contact_modal">
-            <div class="modal">
-                <header>
-                    <h1 class="titre-modal">Contactez-moi</h1>
-                    <img src="assets/icons/close.svg" aria-label="Fermer" onclick="closeModal()" />
+            <div class="modal" role="dialog" aria-modal="true" aria-labelledby="nom-modal" tabindex="-1" aria-hidden="true">
+                <header class="head-modal" role="document">
+
                 </header>
                 <form action="" method="" id="form">
                     <div class="formData">
