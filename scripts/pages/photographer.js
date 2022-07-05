@@ -1,7 +1,7 @@
-import { lightbox } from '../utils/ligthbox.js';
-import { manageLikes } from '../utils/likes.js';
-import { select } from '../utils/select.js';
-import { tri } from '../utils/tri.js';
+import { lightbox } from './../utils/ligthbox.js';
+import { manageLikes } from './../utils/likes.js';
+import { select } from './../utils/select.js';
+import { tri } from './../utils/tri.js';
 
 
 
